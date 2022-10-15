@@ -1,0 +1,7 @@
+原始文件/
+*.doc
+*.docx
+*.vsdx
+.vscode/
+*.tmp
+*.exe
