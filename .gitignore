@@ -1,7 +1,7 @@
 原始文件/
 *.doc
 *.docx
-*.vsdx
+*.png
 .vscode/
 *.tmp
 *.exe
