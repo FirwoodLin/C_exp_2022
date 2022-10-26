@@ -4,15 +4,15 @@
  * @Author: SE202203林彬彬
  * @Date: 2022-10-19 20:53:03
  * @LastEditors: SE202203林彬彬
- * @LastEditTime: 2022-10-19 21:49:22
+ * @LastEditTime: 2022-10-25 11:26:15
  */
 #include <math.h>
 #include <stdio.h>
 #include <string.h>
 #define ull unsigned long long
-ull pow_num[15] = {0, 1, 10, 100, 1000, 10000, 100000, 1000000,10000000,100000000,1000000000};
+ull pow_num[15] = {0, 1, 10, 100, 1000, 10000, 100000, 1000000, 10000000, 100000000, 1000000000};
 ull k;
-char num_tag[10][10]={"自幂","自幂","自幂","水仙花","四叶玫瑰","五角星","六合","北斗星","八仙","自幂"};
+char num_tag[10][10] = {"自幂", "自幂", "自幂", "水仙花", "四叶玫瑰", "五角星", "六合", "北斗星", "八仙", "自幂"};
 ull quick_pow(ull x, ull p)
 {
     if (p == 1)
@@ -51,8 +51,9 @@ int main()
                 ans[cnt++] = i;
         }
         // Output
-        printf("%d位的%s数共有%d个", k,num_tag[k], cnt);
-        if (!cnt){
+        printf("%d位的%s数共有%d个", k, num_tag[k], cnt);
+        if (!cnt)
+        {
             printf("\n");
             continue;
         }
@@ -60,4 +61,6 @@ int main()
             printf("%llu,", ans[i]);
         printf("%llu\n", ans[cnt - 1]);
     }
+    getchar();
+    getchar();
 }

@@ -3,8 +3,8 @@
  * @version:
  * @Author: xkgg
  * @Date: 2022-10-19 21:42:49
- * @LastEditors: xkgg
- * @LastEditTime: 2022-10-19 21:47:37
+ * @LastEditors: SE202203林彬彬
+ * @LastEditTime: 2022-10-25 11:34:24
  */
 #include <stdio.h>
 #include <string.h>
@@ -12,7 +12,7 @@
 #define maxn 1005
 int k, cnt;
 int a[maxn];
-int qpow(int x, int y)
+int quick_pow(int x, int y)
 {
     int ans = 1;
     while (y)
@@ -24,16 +24,16 @@ int qpow(int x, int y)
     }
     return ans;
 }
-int solve(int k)
+int sol(int k)
 {
-    for (re int i = qpow(10, k - 1); i <= qpow(10, k) - 1; i++)
+    for (re int i = quick_pow(10, k - 1); i <= quick_pow(10, k) - 1; i++)
     {
-        int tmp = i, sum = 0;
-        while (tmp)
+        int temp = i, sum = 0;
+        while (temp)
         {
-            int x = tmp % 10;
-            sum += qpow(x, k);
-            tmp /= 10;
+            int x = temp % 10;
+            sum += quick_pow(x, k);
+            temp /= 10;
         }
         if (sum == i)
             a[++cnt] = i;
@@ -63,7 +63,7 @@ int main()
         scanf("%d", &k);
         if (k == 0)
             break;
-        solve(k);
+        sol(k);
     }
     return 0;
 }
