@@ -122,14 +122,17 @@ void exitmy()
 {
     // printf("0");
 }
-//1 2 3
-void acs_sort()
+// 1 2 3
+void old_acs_sort()
 {
-    struct Node *i=head,*j;
-    for(i=head;i->nxt!=NULL;i=i->nxt){
+    struct Node *i = head, *j;
+    for (i = head; i->nxt != NULL; i = i->nxt)
+    {
         // struct Node* lst=i;
-        for(j=i;j->nxt!=NULL;j=j->nxt){
-            if(j->avg > j->nxt->avg){
+        for (j = i; j->nxt != NULL; j = j->nxt)
+        {
+            if (j->avg > j->nxt->avg)
+            {
                 struct Node t = *j;
                 t.nxt = j->nxt->nxt;
 
@@ -141,6 +144,36 @@ void acs_sort()
         }
     }
     output_avg();
+}
+// void swap(struct Node *a, struct Node *b)
+// {
+//     struct Node * t = b->nxt;
+//     b->nxt = a;
+//     a->nxt = t;
+//     return b;
+// }
+void acs_sort()
+{
+    struct Node *p1, *p2, *tail;
+    tail = NULL;
+    while ((head->nxt->nxt) != tail)
+    {
+        p1 = head;
+        p2 = head->nxt;
+        while (p2->nxt != tail)
+        {
+            if ((p2->avg) > (p2->nxt->avg))
+            {
+                p1->nxt = p2->nxt;
+                p2->nxt = p2->nxt->nxt;
+                p1->nxt->nxt = p2;
+                p2 = p1->nxt;
+            }
+            p2 = p2->nxt;
+            p1 = p1->nxt;
+        }
+        tail = p2;
+    }
 }
 void (*funcs[10])(void) = {exitmy, input, output, modify, output_avg_sum, output_avg_sum, acs_sort, exitmy};
 int main()
