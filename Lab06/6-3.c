@@ -4,7 +4,7 @@
  * @Author: Fir
  * @Date: 2022-11-14 20:51:16
  * @LastEditors: Fir
- * @LastEditTime: 2022-11-14 21:10:23
+ * @LastEditTime: 2022-12-07 07:59:15
  */
 #include <stdio.h>
 #include <string.h>
@@ -15,8 +15,12 @@ void sol(char *s)
     int len = strlen(s);
     for (int i = 0; i < len; i++)
     {
-        if (isblank(s[i]) && flag == 0)
+        if (s[i] == ' ' && flag == 0)
             continue;
+        else if (s[i] == '\t')
+        {
+            continue;
+        }
         else
         {
             flag = 1;
