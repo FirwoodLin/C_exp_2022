@@ -5,3 +5,6 @@
 *.exe
 *.~vsdx
 ~$*.*
+*C语言实验报告.*
+.gitignore
+.VSCodeCounter/
